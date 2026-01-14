@@ -1,0 +1,70 @@
+{
+    "drivers": [
+        {
+            "carModel": "大众朗逸",
+            "completedOrders": 4,
+            "gridX": 4,
+            "gridY": 2,
+            "id": "DRIV001",
+            "licensePlate": "京A12345",
+            "name": "李四"
+        },
+        {
+            "carModel": "比亚迪秦",
+            "completedOrders": 8,
+            "gridX": 2,
+            "gridY": 1,
+            "id": "DRIV002",
+            "licensePlate": "湘B 4637P",
+            "name": "刘六"
+        },
+        {
+            "carModel": "比亚迪泰",
+            "completedOrders": 1,
+            "gridX": 11,
+            "gridY": 6,
+            "id": "DRIV003",
+            "licensePlate": "湘A 789U1",
+            "name": "沈恺泽"
+        },
+        {
+            "carModel": "比亚迪泰",
+            "completedOrders": 1,
+            "gridX": 6,
+            "gridY": 6,
+            "id": "DRIV004",
+            "licensePlate": "湘A W1234",
+            "name": "何以维"
+        }
+    ],
+    "passengers": [
+        {
+            "id": "PASS001",
+            "name": "张三"
+        },
+        {
+            "id": "PASS002",
+            "name": "王五"
+        },
+        {
+            "id": "PASS003",
+            "name": "王佳慧"
+        },
+        {
+            "id": "PASS004",
+            "name": "王嘉怀"
+        },
+        {
+            "id": "PASS005",
+            "name": "沈凯泽"
+        },
+        {
+            "id": "PASS006",
+            "name": "何以未"
+        },
+        {
+            "id": "PASS007",
+            "name": "陈威宇"
+        }
+    ]
+}

@@ -1,0 +1,375 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>PlatformWindow</class>
+ <widget class="QMainWindow" name="PlatformWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1400</width>
+    <height>900</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>平台监控端</string>
+  </property>
+  <property name="styleSheet">
+   <string>QMainWindow {
+    background-color: #f5f7fa;
+    border: none;
+   }
+   
+   QGroupBox {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e8e8e8;
+    margin-bottom: 15px;
+   }
+   
+   QTabWidget {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e8e8e8;
+   }
+   
+   QTabBar::tab {
+    background-color: white;
+    border: 1px solid #e8e8e8;
+    border-bottom: none;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    padding: 10px 20px;
+    margin-right: 5px;
+    color: #666666;
+    font-weight: 500;
+   }
+   
+   QTabBar::tab:selected {
+    background-color: #00b2ff;
+    color: white;
+    font-weight: bold;
+   }
+   
+   QTabWidget::pane {
+    border: 1px solid #e8e8e8;
+    border-top: none;
+    border-radius: 0 0 10px 10px;
+    background-color: white;
+   }
+   
+   QListWidget {
+    border: 1px solid #e8e8e8;
+    border-radius: 6px;
+    background-color: white;
+   }
+   
+   QTextEdit {
+    border: 1px solid #e8e8e8;
+    border-radius: 6px;
+    background-color: white;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 12px;
+   }
+   
+   QLabel {
+    color: #333333;
+   }
+   
+   .statLabel {
+    font-size: 14px;
+    font-weight: bold;
+    color: #00b2ff;
+   }
+   
+   .statValue {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333333;
+    margin-top: 5px;
+   }
+   
+   .statCard {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+    padding: 15px;
+    text-align: center;
+    border: 1px solid #e8e8e8;
+   }</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout_3">
+    <item>
+     <widget class="QGroupBox" name="statsGroup">
+      <property name="title">
+       <string>运营指标</string>
+      </property>
+      <layout class="QGridLayout" name="gridLayout">
+       <item row="0" column="0">
+        <widget class="QWidget" name="totalOrdersCard" native="true">
+         <property name="styleSheet">
+          <string>.statCard;</string>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_stats1">
+          <item>
+           <widget class="QLabel" name="totalOrdersLabel">
+            <property name="font">
+             <font>
+              <pointsize>14</pointsize>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string>.statLabel;</string>
+            </property>
+            <property name="text">
+             <string>总订单数：0</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignmentFlag::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QWidget" name="pendingOrdersCard" native="true">
+         <property name="styleSheet">
+          <string>.statCard;</string>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_stats2">
+          <item>
+           <widget class="QLabel" name="pendingOrdersLabel">
+            <property name="font">
+             <font>
+              <pointsize>14</pointsize>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string>.statLabel;</string>
+            </property>
+            <property name="text">
+             <string>待派单：0</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignmentFlag::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item row="0" column="2">
+        <widget class="QWidget" name="acceptedOrdersCard" native="true">
+         <property name="styleSheet">
+          <string>.statCard;</string>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_stats3">
+          <item>
+           <widget class="QLabel" name="acceptedOrdersLabel">
+            <property name="font">
+             <font>
+              <pointsize>14</pointsize>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string>.statLabel;</string>
+            </property>
+            <property name="text">
+             <string>已接单：0</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignmentFlag::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item row="0" column="3">
+        <widget class="QWidget" name="inProgressOrdersCard" native="true">
+         <property name="styleSheet">
+          <string>.statCard;</string>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_stats4">
+          <item>
+           <widget class="QLabel" name="inProgressOrdersLabel">
+            <property name="font">
+             <font>
+              <pointsize>14</pointsize>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string>.statLabel;</string>
+            </property>
+            <property name="text">
+             <string>行程中：0</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignmentFlag::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item row="0" column="4">
+        <widget class="QWidget" name="completedOrdersCard" native="true">
+         <property name="styleSheet">
+          <string>.statCard;</string>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_stats5">
+          <item>
+           <widget class="QLabel" name="completedOrdersLabel">
+            <property name="font">
+             <font>
+              <pointsize>14</pointsize>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string>.statLabel;</string>
+            </property>
+            <property name="text">
+             <string>已完成：0</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignmentFlag::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item row="0" column="5">
+        <widget class="QWidget" name="onlineDriversCard" native="true">
+         <property name="styleSheet">
+          <string>.statCard;</string>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_stats6">
+          <item>
+           <widget class="QLabel" name="onlineDriversLabel">
+            <property name="font">
+             <font>
+              <pointsize>14</pointsize>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string>.statLabel;</string>
+            </property>
+            <property name="text">
+             <string>在线司机：0</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignmentFlag::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout_6">
+      <item>
+       <widget class="QWidget" name="leftWidget" native="true">
+        <property name="maximumSize">
+         <size>
+          <width>400</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_4">
+         <item>
+          <widget class="QTabWidget" name="listTabWidget">
+           <property name="currentIndex">
+            <number>0</number>
+           </property>
+           <widget class="QWidget" name="ordersTab">
+            <attribute name="title">
+             <string>订单列表</string>
+            </attribute>
+            <layout class="QVBoxLayout" name="verticalLayout">
+             <item>
+              <widget class="QListWidget" name="orderListWidget"/>
+             </item>
+            </layout>
+           </widget>
+           <widget class="QWidget" name="driversTab">
+            <attribute name="title">
+             <string>司机列表</string>
+            </attribute>
+            <layout class="QVBoxLayout" name="verticalLayout_2">
+             <item>
+              <widget class="QListWidget" name="driverListWidget"/>
+             </item>
+            </layout>
+           </widget>
+          </widget>
+         </item>
+         <item>
+          <widget class="QGroupBox" name="logGroup">
+           <property name="title">
+            <string>系统日志</string>
+           </property>
+           <layout class="QVBoxLayout" name="verticalLayout_5">
+            <item>
+             <widget class="QTextEdit" name="logTextEdit">
+              <property name="readOnly">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item>
+       <widget class="QGroupBox" name="mapGroup">
+        <property name="title">
+         <string>全局地图监控</string>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_7">
+         <item>
+          <widget class="QGraphicsView" name="mapView">
+           <property name="minimumSize">
+            <size>
+             <width>900</width>
+             <height>700</height>
+            </size>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1400</width>
+     <height>17</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
